@@ -1,0 +1,29 @@
+---
+title: "Presentation DevDataProdW3"
+author: "Carl Ebbinghaus"
+date: "30 12 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## My 2D plotly slide done with R Markdown
+
+```{r, message=FALSE, warning=FALSE, echo = FALSE, fig.cap="Histogram of the miles per gallon from the mtcars data set"}
+library(plotly)
+plot_ly(x = mtcars$mpg, type = "histogram")
+```
+
+## My 3D plotly slide with Rmd
+#### Random 3D plot - takes a while to load for me
+```{r, message=FALSE, echo=FALSE}
+library(plotly)
+set.seed(3456)
+xvals <- rnorm(55, mean = 44, sd = 3)
+yvals <- rnorm(55)
+zvals <- 1:55
+plot_ly(x = ~xvals, y = ~yvals, z = ~zvals,
+        type = "scatter3d", color = ~xvals)
+```
